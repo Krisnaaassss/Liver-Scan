@@ -1,0 +1,824 @@
+* {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+#root {
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.loader {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  background-color: #031926;
+  color: #e7e7e7;
+  min-height: 100vh;
+}
+
+b {
+  font-weight: 900;
+  color: #9067c6;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  scroll-behavior: smooth;
+}
+::-webkit-scrollbar-track {
+  background: #274656;
+  border-radius: 100px;
+}
+::-webkit-scrollbar-thumb {
+  background: #01111a;
+  border-radius: 100px;
+}
+
+/* Background */
+.bg {
+  position: fixed;
+  z-index: -1;
+  bottom: 0px;
+}
+
+.bgtwo {
+  position: fixed;
+  z-index: -1;
+  top: 220px;
+}
+
+.bgtemp {
+  position: fixed;
+  z-index: -1;
+  top: -30px;
+}
+
+/* NAVBAR */
+
+.Navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+
+  height: 70px;
+  top: 0;
+  transition: all 0.7s;
+}
+
+.blur {
+  background-color: #01111a8d;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.Logo {
+  font-size: 32px;
+  letter-spacing: 2px;
+  padding-left: 7%;
+  color: #9067c6;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+}
+
+.NavbarLinks {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 7%;
+  font-weight: 500;
+  font-size: 22px;
+}
+
+.NavbarLinks li {
+  padding: 2px 20px;
+  list-style-type: none;
+}
+
+.NavbarLinks a {
+  color: #c2c1c2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  width: 95%;
+  padding: 2px 7px;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+}
+
+.NavbarLinks a:hover {
+  color: #ffffff;
+}
+.NavbarLinks a::after {
+  background-color: #ffffff;
+  content: "";
+  position: absolute;
+  height: 3px;
+  left: 5px;
+  bottom: 0;
+  width: 0px;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+.NavbarLinks a:hover:after {
+  width: 95%;
+}
+.Hamburger {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  .Navbar {
+    width: 100%;
+  }
+
+  .NavbarLinks {
+    font-size: 26px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: fixed;
+    inset: 0 0 0 50%;
+    gap: 50px;
+    background-color: #431f47;
+    height: 100vh;
+    padding-top: max(20%, 120px);
+    transform: translateX(100%);
+    transition: 0.5s;
+  }
+
+  .showNavbar {
+    transform: translateX(0);
+  }
+
+  .Hamburger {
+    display: block;
+    z-index: 2;
+    padding: 5px;
+    padding-right: 7%;
+    cursor: pointer;
+  }
+
+  .bar {
+    display: block;
+    background-color: #e7e7e7;
+    border-radius: 50px;
+    height: 2.5px;
+    width: 30px;
+    margin: 6px;
+    transition: 0.5s;
+  }
+  .barOne {
+    rotate: -225deg;
+    position: relative;
+    top: 4px;
+    transition: 0.5s;
+  }
+  .barTwo {
+    display: none;
+  }
+  .barThree {
+    position: relative;
+    bottom: 4px;
+    rotate: 225deg;
+    transition: 0.5s;
+  }
+}
+
+/* HOME PAGE */
+
+.HomePage {
+  display: flex;
+  justify-content: space-evenly;
+  min-height: 80vh;
+  margin-top: 100px;
+  margin-bottom: -50px;
+  align-items: center;
+}
+.HomeText h1 {
+  font-weight: 600;
+  font-size: 38px;
+  letter-spacing: 0.7px;
+  padding-top: 10px;
+}
+
+.TypeEffect {
+  padding: 25px 0px;
+  font-weight: 600;
+  font-size: 32px;
+  letter-spacing: 0.6px;
+}
+
+.illustration {
+  width: 400px;
+  height: 400px;
+}
+
+@media (max-width: 900px) {
+  .HomePage {
+    display: block;
+    text-align: center;
+    margin-top: 150px;
+    padding: 25px;
+  }
+  .HomeText {
+    text-align: left;
+    display: inline-block;
+  }
+  .illustration {
+    margin: auto;
+    margin-bottom: 50px;
+  }
+}
+
+@media (max-width: 500px) {
+  .HomePage {
+    min-height: 70vh;
+  }
+  .NavbarLinks {
+    inset: 0 0 0 30%;
+  }
+  .HomeText h1 {
+    font-weight: 500;
+    font-size: 28px;
+  }
+  .TypeEffect {
+    font-weight: 500;
+    font-size: 24px;
+  }
+  .illustration {
+    width: 300px;
+    height: 300px;
+    margin-bottom: 0px;
+  }
+}
+
+/* ABOUT */
+
+.AboutPage {
+  display: flex;
+  justify-content: space-evenly;
+  min-height: 80vh;
+  margin-top: 10px;
+  align-items: center;
+  /* padding: px; */
+  animation-name: jatuhDariAtas;
+  animation-duration: 2s;
+}
+
+@keyframes jatuhDariAtas {
+  from {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  to {
+    opacity: 0, 5;
+    transform: translateY(0);
+  }
+}
+
+.AboutText {
+  width: 50%;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: 2px;
+  margin-top: 25px;
+}
+.AboutTextHeading {
+  font-size: 45px;
+  font-weight: 600;
+  padding-bottom: 40px;
+  text-align: center;
+  letter-spacing: 1;
+}
+.AboutText a {
+  color: #9067c6;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.AboutTextBody {
+  text-align: center;
+  font-size: 22px;
+}
+
+.Avatar {
+  width: 280px;
+}
+
+@media (max-width: 900px) {
+  .AboutPage {
+    display: block;
+    text-align: center;
+    padding: 30px;
+  }
+  .AboutText {
+    text-align: left;
+    display: inline-block;
+    width: 95%;
+    line-height: 24px;
+    letter-spacing: 0.6px;
+    margin-bottom: 80px;
+  }
+  .AboutTextHeading {
+    font-size: 26px;
+  }
+
+  .Avatar {
+    width: 200px;
+    margin-bottom: 75px;
+  }
+}
+
+/* Skills section */
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 50px 10%;
+  animation-name: jatuhDariAtas;
+  animation-duration: 2s;
+}
+
+.SkillBox {
+  width: max(15%, 150px);
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0px 25px 25px 0px;
+  border: 3px solid #431f47;
+  font-size: 64px;
+  border-radius: 5px;
+  transition: 0.5s;
+}
+.SkillBox:hover {
+  transform: scale(1.2);
+  box-shadow: 0 2px 8px 0 #431f47;
+}
+
+.SkillsHeading {
+  text-align: center;
+  /* margin: 10px 10px; */
+  font-size: 36px;
+  letter-spacing: 0.6px;
+  animation-name: jatuhDariAtas;
+  animation-duration: 2s;
+}
+
+@media (max-width: 500px) {
+  .AboutText {
+    font-size: 16px;
+  }
+  .Avatar {
+    width: 200px;
+    margin-bottom: 25px;
+  }
+
+  .SkillsHeading {
+    font-size: 26px;
+  }
+  .SkillBox {
+    width: 100px;
+    height: 100px;
+    font-size: 50px;
+  }
+}
+
+.form-group-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.form-control::placeholder {
+  font-size: 16px;
+  text-indent: 10px;
+}
+
+.form-group-col {
+  width: 350px;
+  border: 3px solid #431f47;
+  border-radius: 5px;
+  text-align: left;
+  padding: 15px;
+  letter-spacing: 0.5px;
+  font-size: 18px;
+}
+
+.form-label {
+  padding-bottom: 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.form-control {
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid #ced4da;
+  text-indent: 10px;
+  font-size: 18px;
+}
+
+.form-select {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+/* Project */
+
+.projectHeading {
+  text-align: center;
+  padding: 25px 0;
+  letter-spacing: 0.4px;
+  font-size: 36px;
+  margin-top: 120px;
+  animation-name: jatuhDariAtas;
+  animation-duration: 2s;
+}
+
+.project {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px;
+}
+
+.projectTitle {
+  text-align: center;
+}
+.projectBox {
+  width: 385px;
+  border: 3px solid #431f47;
+  border-radius: 5px;
+  padding: 15px;
+  letter-spacing: 0.5px;
+  /* line-height: 22px; */
+  animation-name: jatuhDariAtas;
+  animation-duration: 2s;
+  margin: 0px 25px 50px 25px;
+  transition: 0.5s;
+  font-size: 20px;
+}
+
+.projectDescription {
+  font-size: 19px;
+  text-align: justify;
+}
+
+.pop-up {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.pop-content {
+  text-align: center;
+}
+
+.projectBox:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px 0 #431f47;
+}
+
+.buttonPengujian {
+  width: 50%;
+  height: 50px;
+  border-radius: 5px;
+  border: 1px solid #ced4da;
+  text-align: center;
+  letter-spacing: 1px;
+  font-size: 20px;
+  font-weight: 500;
+  background-color: #f8f9fa;
+  transition: background-color 0.3s ease;
+  color: #431f47;
+  font-weight: 700;
+}
+
+.form-submit {
+  width: 50%;
+  margin-top: 40px;
+}
+.buttonPengujian:hover {
+  cursor: pointer;
+  background-color: #e2e6ea;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.projectBox img {
+  display: block;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.projectbtn {
+  font-size: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 40%;
+  margin: 25px 3% 0;
+  border-radius: 5px;
+  background-color: #431f47;
+  color: #e7e7e7;
+  height: 30px;
+  cursor: pointer;
+  text-decoration: none;
+  border-style: none;
+}
+
+/* Resume */
+
+.ResumePage {
+  padding-top: 50px;
+  width: fit-content;
+  position: relative;
+  margin: 100px auto 0px;
+  text-align: center;
+}
+
+.resumeview {
+  pointer-events: none;
+}
+
+/* FOOTER */
+
+footer {
+  width: 90%;
+  height: 40px;
+  margin: 10px auto;
+  margin-top: 80px;
+  letter-spacing: 0.5px;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+
+  position: relative;
+  bottom: 0px;
+  text-align: center;
+}
+
+footer h4 {
+  margin: 0 25px;
+  font-weight: 500;
+}
+
+.footerLinks {
+  display: flex;
+  width: 180px;
+  font-size: 18px;
+  justify-content: space-evenly;
+  padding-top: 15px;
+}
+
+.textLiver {
+  text-align: justify;
+}
+
+.footerLinks a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.judulmetode {
+  color: white;
+  letter-spacing: 10px;
+}
+
+.judulPengujian {
+  color: white;
+  letter-spacing: 5px;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.judulfooter {
+  color: white;
+  letter-spacing: 0.5px;
+  font-size: 18px;
+}
+
+.iconFooter {
+  font-size: 20px;
+}
+
+.formPengujian {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+
+.formisi {
+  margin: 10px;
+}
+td {
+  padding: 5px 50px; /* Match padding of headers (adjust if needed) */
+  border: 1px solid #ddd; /* Add borders to each cell */
+  font-size: 0.8rem; /* Optionally reduce font size for more data */
+  overflow-wrap: break-word; /* Allow content to wrap within cells */
+  white-space: nowrap; /* Prevent cells from wrapping */
+  border-right: 1px solid #ddd; /* Add right border to each cell */
+  border-bottom: 1px solid #ddd; /* Add bottom border to each cell */
+}
+
+th {
+  border-top: 1px solid #ddd; /* Add top border for table header cells */
+  border-left: 1px solid #ddd; /* Add left border for table header cells */
+  /* Inherit other styles from 'td' */
+}
+
+.DatasetHeading {
+  text-align: center;
+  letter-spacing: 5px;
+  font-size: 46px;
+  padding-bottom: 20px;
+  animation-name: jatuhDariAtas;
+  animation-duration: 6s;
+}
+
+.dataset-container {
+  animation-name: jatuhDariAtas;
+  animation-duration: 2s;
+  width: 85%;
+  border: 1px solid #ddd;
+  overflow: auto;
+  max-height: 500px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.dataset-container::-webkit-scrollbar {
+  width: 14px;
+  height: 14px;
+}
+
+thead {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: #9067c6;
+  border-bottom: 5px solid #ddd;
+}
+
+table {
+  width: 100%;
+}
+
+.tableMetode {
+  padding: 10px;
+}
+
+.loadingData {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.animasi {
+  width: 100px;
+  height: 100px;
+}
+
+.errorDataset {
+  text-align: center;
+  padding: 25px 0;
+  font-size: 26px;
+  color: red;
+  font-weight: bold;
+  animation-name: jatuhDariAtas;
+  animation-duration: 3s;
+}
+
+.halamanPengujian {
+  text-align: center;
+  padding: 25px 0;
+  font-size: 36px;
+  margin-top: 120px;
+  animation-name: jatuhDariAtas;
+  animation-duration: 3s;
+}
+
+@media (max-width: 750px) {
+  footer {
+    height: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .dataset-container {
+    width: 100%;
+    max-height: 300px;
+    overflow: auto;
+  }
+  .DatasetHeading {
+    font-size: 30px;
+  }
+  .AboutTextHeading {
+    margin-top: 25px;
+  }
+  .halamanPengujian {
+    margin: 20px;
+  }
+
+  .judulPengujian {
+    font-size: 28px;
+    text-align: center;
+    margin-top: 50px;
+  }
+
+  .formPengujian {
+    margin-top: 20px;
+  }
+
+  .form-group-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .form-group-col {
+    flex-basis: calc(50% - 10px);
+    margin-bottom: 10px;
+  }
+
+  .form-label {
+    font-size: 16px;
+  }
+
+  .form-control {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  .form-select {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  .form-group-row {
+    flex-direction: column;
+  }
+
+  .form-group-col {
+    flex-basis: 100%;
+  }
+  .form-submit {
+    width: 100%;
+  }
+  .judulPengujian {
+    margin-top: 70px;
+  }
+}
